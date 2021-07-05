@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SpringBoot CRUD </title>
+    <link crossorigin="anonymous" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          rel="stylesheet" th:href="@{https://pro.fontawesome.com/releases/v5.10.0/css/all.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css}"/>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+    <script th:src="@{cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js}"></script>
+</head>
+<body>
+<div class="wrapper" align="center">
+    <h1>Update Employee</h1>
+    <div class="col-sm-4">
+        <div class="card-body">
+            <form th:action="@{/add}" th:object="${employees}" method="post">
+                <div align="left">
+                    <div class="form-group">
+                        <label for="inputId">ID</label>
+                        <input th:field="*{id}" type="text" class="form-control" id="inputId" placeholder="ID" name="id" readonly="readonly"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName">Last Name</label>
+                        <input th:field="*{lastname}" type="text" class="form-control" id="inputLastName" placeholder="Last Name" name="lastname" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFirstName">First Name</label>
+                        <input th:field="*{firstname}" type="text" class="form-control" id="inputFirstName" placeholder="First Name" name="firstname" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputMiddleName">Middle Name</label>
+                        <input th:field="*{middlename}" type="text" class="form-control" id="inputMiddleName" placeholder="Middle Name" name="middlename" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputContact">Contact</label>
+                        <input th:field="*{contact}" type="text" class="form-control" id="inputContact" placeholder="Contact" name="contact" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input th:field="*{address}" type="text" class="form-control" id="inputAddress" placeholder="Address" name="address" />
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSalary">Salary</label>
+                        <input th:field="*{salary}" type="number" class="form-control" id="inputSalary" placeholder="Salary" name="salary" />
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success btn-lg rounded-pill">
+                            <i class="fa fa-edit"></i> Update
+                        </button>
+                        <a th:href="@{/}" class="btn btn-info rounded-pill"> <i class="fa fa-list"></i> Back to Employee List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
